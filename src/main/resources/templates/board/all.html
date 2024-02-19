@@ -16,17 +16,17 @@
   <div>
     <table>
       <thead>
-      <tr>
-        <td>번호</td>
-        <td>제목</td>
-        <td>작성자</td>
+      <tr class="top">
+        <td class="boardId">번호</td>
+        <td class="boardTitle">제목</td>
+        <td class="writer">작성자</td>
       </tr>
       </thead>
       <tbody id="rows">
       <tr class="row" th:each="board :${list}"  th:data-board-id="${board.boardId}">
-        <td th:text="${board.boardId}"></td>
-        <td th:text="${board.boardTitle}"></td>
-        <td th:text="${board.writer}"></td>
+        <td class="boardId" th:text="${board.boardId}"></td>
+        <td class="boardTitle" th:text="${board.boardTitle}"></td>
+        <td class="writer" th:text="${board.writer}"></td>
       </tr>
       </tbody>
     </table>

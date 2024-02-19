@@ -1,43 +1,42 @@
+/* add.html , detailForm.html, updateForm.html */
 body {
   background-color: #f2f5f8;
   margin: 20px;
 }
-
+/* 제목, 작성자, 내용 확인 */
 input::placeholder,
 textarea::placeholder {
   color: #99a3b0;
 }
-
+/* 유효성 검사 오류 메세지 */
 .err-msg {
   display: none;
   color: #ff4d4d;
   font-size: 0.8em;
   font-style: italic;
 }
-
 .err-msg.on {
   display: block;
 }
-
+/* 중앙 정렬 */
 .wrap {
   margin: auto;
   text-align: center;
 }
-
+/* 타이틀 */
 h3 {
-  color: #2d3846;
+  color: #008080;
 }
-
+/* text 구분 (날짜 제외) */
 label:not(.date) {
   display: none;
   margin-bottom: 6px;
 }
-
-
+/* 게시글 번호 */
 input#boardId {
   display: none;
 }
-
+/* text 박스 */
 input[type="text"],
 textarea {
   width: 80%;
@@ -47,11 +46,11 @@ textarea {
   border-radius: 4px;
   box-sizing: border-box;
 }
-
+/* 버튼 모음 */
 .btn-wrap {
   margin-top: 5px;
 }
-
+/* 버튼 서식 */
 .btn-wrap > * {
   background-color: #008080;
   color: white;

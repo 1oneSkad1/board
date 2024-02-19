@@ -43,7 +43,7 @@ public class BoardController {
   ){
     //데이터 유효성 체크
     //제목
-    String pattern = "^[a-zA-Z가-힣0-9 ,._-]{2,10}$";
+    String pattern = "^[a-zA-Zㄱ-ㅣ가-힣0-9 ,._-]{2,10}$";
     if (!Pattern.matches(pattern, addForm.getBoardTitle())) {
       model.addAttribute("addForm", addForm);
       model.addAttribute("s_err_board", "영문/숫자/한글/_-, 2~10자리만 입력가능");
@@ -57,7 +57,7 @@ public class BoardController {
       return "board/add";
     }
     //내용
-    pattern = "^[a-zA-Z가-힣0-9 ,./~!@#$%^&*()=+_-]{1,500}$";
+    pattern = "^[a-zA-Zㄱ-ㅣ가-힣0-9 \\s,./~!@#$%^&*()=+_-]{1,500}$";
     if (!Pattern.matches(pattern, addForm.getBoardContent())) {
       model.addAttribute("addForm", addForm);
       model.addAttribute("s_err_content", "최대 500자까지 입력가능");
@@ -115,14 +115,14 @@ public class BoardController {
 
     //데이터 유효성 체크
     //제목
-    String pattern = "^[a-zA-Z가-힣0-9 ,._-]{2,10}$";
+    String pattern = "^[a-zA-Zㄱ-ㅣ가-힣0-9 ,._-]{2,10}$";
     if (!Pattern.matches(pattern, updateForm.getBoardTitle())) {
       model.addAttribute("board", updateForm);
       model.addAttribute("s_err_board", "영문/숫자/한글/_-가능, 2~10자리");
       return "board/updateForm";
     }
     //내용
-    pattern = "^[a-zA-Z가-힣0-9 ,./~!@#$%^&*()=+_-]{1,500}$";
+    pattern = "^[a-zA-Zㄱ-ㅣ가-힣0-9 \\s,./~!@#$%^&*()=+_-]{1,500}$";
     if (!Pattern.matches(pattern, updateForm.getBoardContent())) {
       model.addAttribute("board", updateForm);
       model.addAttribute("s_err_content", "최대 500자까지 입력가능");
