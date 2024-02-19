@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>게시글 수정</title>
+  <link rel="stylesheet" href="/css/board/input.css">
+</head>
+<body>
+  <div class="wrap">
+    <h3>게시글 수정</h3>
+    <!-- form.action에 값이 없는 경우 가장최근에 요청했던 url 값으로 반영된다. -->
+    <form action="" method="post">
+      <div>
+        <label for="boardId">번호</label>
+        <input id = "boardId" type="text" th:value="${bid}" readonly>
+      </div>
+      <div>
+        <label for="boardTitle">제목</label><input id="boardTitle" name="boardTitle" type="text" th:value="${board.boardTitle}">
+        <span class="err-msg" th:if="${s_err_board != ''}" th:class = "'err-msg on'" th:text="${s_err_board}"></span>
+      </div>
+      <div><label for="writer">작성자</label><input id="writer" name="writer" type="text" th:value="${board.writer}" readonly></div>
+      <div>
+        <label for="boardContent">내용</label><textarea id="boardContent" name="boardContent" cols="30" rows="10" th:text="${board.boardContent}"></textarea>
+        <span class="err-msg" th:if="${s_err_content != ''}" th:class = "'err-msg on'" th:text="${s_err_content}"></span>
+      </div>
+      <div class="btn-wrap">
+        <input id="cancelBtn" type="reset" value="취소">
+        <input id="updateBtn" type="submit" value="저장">
+        <input id="listBtn" type="button" value="목록" onclick="location.href='/boards'">
+      </div>
+    </form>
+  </div>
+</body>
+</html>

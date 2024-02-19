@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>게시글 전체 목록</title>
+  <link rel="stylesheet" href="/css/board/all.css">
+  <script src="/js/board/all.js" async></script>
+</head>
+<body>
+  <h2>게시글 전체 목록</h2>
+  <div>
+    <button type="button" id="addBtn">게시글 작성</button>
+  </div>
+  <div>
+    <table>
+      <thead>
+      <tr>
+        <td>번호</td>
+        <td>제목</td>
+        <td>작성자</td>
+      </tr>
+      </thead>
+      <tbody id="rows">
+      <tr class="row" th:each="board :${list}"  th:data-board-id="${board.boardId}">
+        <td th:text="${board.boardId}"></td>
+        <td th:text="${board.boardTitle}"></td>
+        <td th:text="${board.writer}"></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>

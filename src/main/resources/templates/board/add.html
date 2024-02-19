@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>게시글 작성</title>
+  <link rel="stylesheet" href="/css/board/input.css">
+</head>
+<body>
+  <div class="wrap">
+    <h3>게시글 작성</h3>
+    <form id="frm" action="/boards/add" method="post" th:object="${addForm}">
+      <div>
+        <input id="boardTitle" name="boardTitle" type="text" placeholder="제목을 입력해 주세요." th:value="*{boardTitle}">
+        <span class="err-msg" th:if="${s_err_board != ''}" th:class = "'err-msg on'" th:text="${s_err_board}"></span>
+      </div>
+      <div>
+        <input id="writer" name="writer" type="text" placeholder="이름을 입력해 주세요." th:value="*{writer}">
+        <span class="err-msg" th:if="${s_err_writer != ''}" th:class = "'err-msg on'" th:text="${s_err_writer}"></span>
+      </div>
+      <div>
+        <textarea id="boardContent" name="boardContent" cols="30" rows="10" placeholder="내용을 입력하세요." th:text="*{boardContent}"></textarea>
+        <span class="err-msg" th:if="${s_err_content != ''}" th:class = "'err-msg on'" th:text="${s_err_content}"></span>
+      </div>
+
+      <div class="btn-wrap">
+        <input type="reset" value="취소">
+        <input type="submit" value="저장">
+        <input type="button" value="목록" onclick="location.href='/boards'">
+      </div>
+    </form>
+  </div>
+</body>
+</html>

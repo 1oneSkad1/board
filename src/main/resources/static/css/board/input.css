@@ -1,0 +1,65 @@
+body {
+  background-color: #f2f5f8;
+  margin: 20px;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #99a3b0;
+}
+
+.err-msg {
+  display: none;
+  color: #ff4d4d;
+  font-size: 0.8em;
+  font-style: italic;
+}
+
+.err-msg.on {
+  display: block;
+}
+
+.wrap {
+  margin: auto;
+  text-align: center;
+}
+
+h3 {
+  color: #2d3846;
+}
+
+label:not(.date) {
+  display: none;
+  margin-bottom: 6px;
+}
+
+
+input#boardId {
+  display: none;
+}
+
+input[type="text"],
+textarea {
+  width: 80%;
+  padding: 8px;
+  margin: 5px;
+  border: 1px solid #99a3b0;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.btn-wrap {
+  margin-top: 5px;
+}
+
+.btn-wrap > * {
+  background-color: #008080;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  margin-right: 8px;
+}
+.btn-wrap > *:hover {
+  background-color: #005454;
+}

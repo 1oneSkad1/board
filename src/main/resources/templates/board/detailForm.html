@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>게시글 조회</title>
+  <link rel="stylesheet" href="/css/board/input.css">
+  <script src="/js/board/detailForm.js" async></script>
+</head>
+<body>
+  <div class="wrap">
+    <h3>게시글 조회</h3>
+    <form action="#" method="post">
+      <div>
+        <label for="boardId">번호</label>
+        <input id="boardId" type="text" th:value="${bid}" readonly>
+      </div>
+      <div>
+        <label for="boardTitle">제목</label>
+        <input id = "boardTitle" name="boardTitle" type="text" th:value="${board.boardTitle}" readonly>
+      </div>
+      <div>
+        <label for="writer">작성자</label>
+        <input id="writer" name="writer" type="text" th:value="${board.writer}" readonly>
+      </div>
+      <div>
+        <label for="boardContent">내용</label>
+        <textarea id="boardContent" name="boardContent" cols="30" rows="10" th:text="${board.boardContent}" readonly></textarea></div>
+      <div>
+        <label class="date">작성일 : </label>
+        <span th:text="${#temporals.format(board.cdate,'yyyy년 MM월 dd일 a hh시 mm분')}"></span>
+      </div>
+      <div>
+        <label class="date">수정일 : </label>
+        <span th:text="${#temporals.format(board.udate,'yyyy년 MM월 dd일 a hh시 mm분')}"></span>
+      </div>
+      <div class="btn-wrap">
+        <input id="modifyBtn" type="button" value="수정" onclick="location.href=`/boards/${bid}/edit`">
+        <input id="deleteBtn" type="button" value="삭제">
+        <input id="listBtn" type="button" value="목록" onclick="location.href='/boards'">
+      </div>
+    </form>
+    <dialog id="delModal">
+      <p>삭제하시겠습니까?</p>
+      <form action="" method="dialog">
+        <button id="cancelBtn">취소</button>
+        <button id="delItemBtn">삭제</button>
+      </form>
+    </dialog>
+  </div>
+</body>
+</html>
