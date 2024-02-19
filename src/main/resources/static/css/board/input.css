@@ -24,8 +24,9 @@ textarea::placeholder {
   text-align: center;
 }
 /* 타이틀 */
-h3 {
+h2 {
   color: #008080;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
 }
 /* text 구분 (날짜 제외) */
 label:not(.date) {
@@ -58,7 +59,36 @@ textarea {
   border: none;
   border-radius: 4px;
   margin-right: 8px;
+  cursor: pointer;
 }
 .btn-wrap > *:hover {
   background-color: #005454;
+}
+/* 다이얼로그 모달 */
+dialog {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 10% auto;
+}
+/* '삭제하시겠습니까' */
+dialog > p {
+  margin: 10px 0;
+  font-weight: bold;
+}
+/* 버튼 스타일 */
+dialog > form > button {
+  padding: 5px 10px;
+  margin: 5px;
+  cursor: pointer;
+  border: none;
+  border-radius: 3px;
+  font-size: 14px;
+}
+dialog > form > #cancelBtn {
+  background-color: #ddd;
+}
+dialog > form > #delItemBtn {
+  background-color: #e74c3c;
+  color: white;
 }

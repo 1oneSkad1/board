@@ -9,7 +9,7 @@
 </head>
 <body>
   <div class="wrap">
-    <h3>게시글 작성</h3>
+    <h2>게시글 작성</h2>
     <form id="frm" action="/boards/add" method="post" th:object="${addForm}">
       <div>
         <input id="boardTitle" name="boardTitle" type="text" placeholder="제목을 입력해 주세요." th:value="*{boardTitle}">
