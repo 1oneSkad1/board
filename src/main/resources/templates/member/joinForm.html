@@ -15,9 +15,10 @@
     <button type="button" id="dupchkBtn">중복체크</button>
     <span class="errmsg" id="errmsg_email"></span>
   </p>
-  <p><input type="password" name="passwd" placeholder="비밀번호"></p>
-  <p><input type="password" placeholder="비밀번호확인"></p>
+  <p><input id="password" type="password" name="passwd" placeholder="비밀번호"></p>
+  <p><input id="passwordCheck" type="password" placeholder="비밀번호확인"></p>
   <p><input type="text" name="nickname" placeholder="별칭"></p>
+  <span class="errmsg" id="errmsg_password"></span>
   <p><button id="joinBtn">가입</button></p>
 </form>
 <script>
@@ -26,6 +27,10 @@
     //이메일 중복체크 확인
     if(!email.dataset.dupchk || email.dataset.dupchk == 'ok'){
       errmsg_email.textContent = '이메일 중복체크 바랍니다!'
+      return;
+    }
+    if (document.getElementById('password').value != document.getElementById('passwordCheck').value){
+      errmsg_password.textContent = '비밀번호가 같지 않습니다.'
       return;
     }
     evt.currentTarget.submit();
@@ -72,6 +77,8 @@
       console.log('email none');
     }
   }
+
+
 </script>
 </body>
 </html>

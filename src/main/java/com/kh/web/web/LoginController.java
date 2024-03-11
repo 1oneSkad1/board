@@ -37,7 +37,7 @@ public class LoginController {
                       @RequestParam(value = "redirectUrl", required = false) String redirectUrl) {
     log.info("loginForm={}", loginForm);
     //1) 유효성 체크
-
+    
     //2) 회원 유무 체크
     //2-1)회원 아이디 존재 유무 체크
     if (memberSVC.existEmail(loginForm.getEmail())) {
