@@ -1,0 +1,58 @@
+h3 {
+    color: #333;
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+input, button {
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#dupchkBtn {
+    background-color: #3498db;
+    color: #fff;
+    cursor: pointer;
+}
+
+#joinBtn, button {
+    background-color: #2ecc71;
+    color: #fff;
+    cursor: pointer;
+}
+
+#logout {
+    color: #e74c3c;
+}
+
+.errmsg {
+    color: #e74c3c;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+span {
+    font-weight: bold;
+}
+
+a {
+    text-decoration: none;
+    color: #007BFF;
+}

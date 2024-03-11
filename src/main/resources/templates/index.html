@@ -5,22 +5,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>메인화면</title>
+  <link rel="stylesheet" href="/css/member/join.css">
 </head>
 <body>
 <h3>게시글 작성</h3>
 <th:block th:if="${session.loginMember}">
+  <span>별칭:</span>
   <p th:text="${session.loginMember.nickname}"></p>
   <ul>
-    <li><a href="/products">상품관리-SSR</a></li>
-    <li><a href="/api/view/products">상품관리-CSR</a></li>
-    <li><a href="/pubdata/stocks">주가시세조회</a></li>
-    <li><a href="/pubdata/news">뉴스검색</a></li>
+    <li><a href="/boards">게시글</a></li>
     <li><a href="#" id="logout">로그아웃</a></li>
   </ul>
 </th:block>
 <th:block th:unless="${session.loginMember}">
   <ul>
-    <li><a href="/pubdata/news">뉴스검색</a></li>
+<!--    <li><a href="/boards">게시글</a></li>-->
     <li><a href="/members/join">회원가입</a></li>
     <li><a href="/login">로그인</a></li>
   </ul>
@@ -38,7 +37,6 @@
        })
       .catch(console.log);
   });
-
 </script>
 </body>
 </html>

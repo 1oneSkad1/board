@@ -44,17 +44,19 @@ td.writer {
   cursor: pointer;
 }
 /* 버튼 서식 */
-#addBtn {
+#addBtn, #logOutBtn {
   padding: 7px 15px;
   background-color: #008080;
   color: white;
   font-size: 1.1em;
   border: none;
   border-radius: 4px;
-  float: right;
   margin-bottom: 10px;
 }
-#addBtn:hover {
+#addBtn:hover, #logOutBtn:hover {
   background-color: #005454;
   cursor: pointer;
+}
+#addBtn {
+  float: right;
 }

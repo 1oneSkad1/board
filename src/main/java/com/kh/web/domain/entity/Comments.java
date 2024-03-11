@@ -5,10 +5,10 @@ import lombok.Data;
 import java.time.LocalDateTime;
 
 @Data
-public class Board {
+public class Comments {
   private Long boardId;
-  private String boardTitle;
-  private String boardContent;
+  private Long commentsId;
+  private String commentsContent;
   private String writer;
   private Long memberId;
   private LocalDateTime cdate;

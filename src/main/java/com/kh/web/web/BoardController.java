@@ -4,6 +4,7 @@ import com.kh.web.domain.board.svc.BoardSVC;
 import com.kh.web.domain.entity.Board;
 import com.kh.web.web.form.board.AddForm;
 import com.kh.web.web.form.board.UpdateForm;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,12 +21,10 @@ import java.util.regex.Pattern;
 @Slf4j
 @Controller
 @RequestMapping("/boards")          // http://localhost:9080/boards
+@RequiredArgsConstructor
 public class BoardController {
 
-  private BoardSVC boardSVC;
-  BoardController(BoardSVC boardSVC){
-    this.boardSVC = boardSVC;
-  }
+  private final BoardSVC boardSVC;
 
   //게시판 작성 map
   @GetMapping("/add")               // GET http://localhost:9080/boards/add
@@ -50,10 +49,10 @@ public class BoardController {
       return "board/add";
     }
     //작성자
-    pattern = "^[가-힣]{2,5}$";
+    pattern = "^[a-zA-Zㄱ-ㅣ가-힣0-9]{2,5}$";
     if (!Pattern.matches(pattern, addForm.getWriter())) {
       model.addAttribute("addForm", addForm);
-      model.addAttribute("s_err_writer", "한글2~5자리만 입력가능");
+      model.addAttribute("s_err_writer", "영문/숫자/한글2~5자리만 입력가능");
       return "board/add";
     }
     //내용
@@ -88,7 +87,7 @@ public class BoardController {
 
     return "board/detailForm";
   }
-  
+
   //게시글 수정
   @GetMapping("/{bid}/edit")          //GET http://localhost:9080/boards/게시글번호/edit
   public String updateFrom(

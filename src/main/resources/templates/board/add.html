@@ -16,7 +16,7 @@
         <span class="err-msg" th:if="${s_err_board != ''}" th:class = "'err-msg on'" th:text="${s_err_board}"></span>
       </div>
       <div>
-        <input id="writer" name="writer" type="text" placeholder="이름을 입력해 주세요." th:value="*{writer}">
+        <input id="writer" name="writer" type="text" th:value="${session.loginMember.nickname}" readonly>
         <span class="err-msg" th:if="${s_err_writer != ''}" th:class = "'err-msg on'" th:text="${s_err_writer}"></span>
       </div>
       <div>

@@ -10,3 +10,14 @@ $rows.addEventListener('click',evt=>{
   const boardId = $row.dataset.boardId;
   location.href = `/boards/${boardId}/detail`;
 });
+// 로그아웃
+const $logOutBtn = document.getElementById('logOutBtn');
+$logOutBtn.addEventListener('click',evt=>{
+      fetch('/logout',{method:'POST',body:null})
+  .then(res=>res.text())
+  .then(res=>{
+    if(res==='OK'){
+      location.href='/';
+    }
+   })
+})
